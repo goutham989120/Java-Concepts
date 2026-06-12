@@ -1,4 +1,4 @@
-========================= Is-A Relationship/Inheritance =====================
+========================= IS-A Relationship/Inheritance =====================
 An Is-A Relationship means one class is a specialized version of another class.
 Achieved by extends keyword and Code resuability
 A java class cannot extend more than one class at a time hence Java doesn't support multiple inheritance in class.
