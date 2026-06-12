@@ -3,6 +3,9 @@ An Is-A Relationship means one class is a specialized version of another class.
 Achieved by extends keyword and Code resuability
 A java class cannot extend more than one class at a time hence Java doesn't support multiple inheritance in class.
 
+But interface can extends any number of interfaces simultaneously, hence java provide support for multiple inheritance w.r.t interfaces
+Ex. interface C extends A,B 
+
 "Every class in java is child class of Object"
 
 class Employee { // Parent class
