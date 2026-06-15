@@ -64,6 +64,65 @@ Property -
 5. Private, static, final methods - can be overloaded; cannot be overridden
 6. Access modifiers - No restrictions(Overloading); The scope of access modifiers cannot be reduced(Overriding)
 7. throws clause - No restrictions(Overloading); If child class method throws any checked exception compulsory parent class method should throw the same checked exceptionor it's parent.
-8. Method resolution - Always takes care by compiler based on reference type(Overloading); Always takes care by JVM based on runtime object.
-9. Compile Time/Static Polymorphism/early binding (Overloading); Run Time/Dynamic Polymorphism/late binding(Overriding) 
+8. Method resolution - Always takes care by compiler based on reference type(Overloading); Always takes care by JVM based on runtime object(Overriding).
+9. Compile Time/Static Polymorphism/early binding (Overloading); Run Time/Dynamic Polymorphism/late binding(Overriding)
+
+==================================== Overriding w.r.t variables =============================
+==================================== Polymorphism ===========================================
+The same method call can behave differently depending on the object that executes it.
+1. Method Overloading : Compile-Time Polymorphism
+2. Method Overriding : Run-Time Polymorphism
+
+class Payment {
+	void pay() {
+		System.out.println("Generic Payment");
+	}
+}
+
+class UpiPayment extends Payment {
+	@Override
+	void pay() {
+		System.out.println("UPI Payment");
+	}
+}
+
+class CardPayment extends Payment {
+	@Override
+	void pay() {
+		System.out.println("Card Payment");
+	}
+}
+
+public class Main {
+	public static void main(String[] args) {
+		Payment payment = new UpiPayment();
+		payment.pay();
+		
+		Payment payment = new CardPayment();
+		payment.pay();
+	}
+}
+
+Ex. Payment payment = new UpiPayment()
+payment - Reference Type
+UpiPayment - Actual Object
+
+3. If we don't know exact run-time object then we should go for "parent reference".
+Ex. The 1st element in the array list can be anytime - it may be "student/customer/string/StringBuffer object" hence the return type of get method is "Object" which can hold any object
+Object o = l.get(0);
+
+C c = new C(); - ArrayList al = new ArrayList(); - 
+1. We can use this approach if we know exact run-time type of object
+2. By using child reference we can call both parent and child class methods.
+3. We can use child reference to hold only particular child class object.(Disadv)
+P p = new C(); - List l = new ArrayList();
+1. Use if we don't know exact run-time type of object.
+2. By using parent reference only methods available in parent class and we can't call child specific methods.
+3. We can use parent reference any child class object(Adv).
+
+Encapsulation - Security
+Polymorphism - Flexibility
+Inheritance - Reusability
+
+==================================== Polymorphism ===========================================
 
